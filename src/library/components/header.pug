@@ -4,8 +4,8 @@
 
 //- logo variables
 - var logoLink = "img/logo.png";
-- var logoWidth = "221";
-- var logoHeight = "43";
+//- var logoWidth = "221";
+//- var logoHeight = "43";
 
 //- main-navigation variables / here write down "link": "item"
 - var mainNavigationArray = {"#main": "Главная", "#about": "О нас", "#catalog": "Каталог", "#portfolio": "Наши работы", "#contact": "Контакты"};
@@ -17,7 +17,7 @@
 header.main-header
 	.main-header-container
 		.logo
-			img.logo__img(src=logoLink width=logoWidth height=logoHeight alt="logo")
+			img.logo__img(src=logoLink alt="logo")
 		nav.main-navigation
 			ul.main-navigation__list
 				each mainNavigationItem, mainNavigationLink in mainNavigationArray
