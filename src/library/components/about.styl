@@ -1,0 +1,72 @@
+.about
+	background-color #292929
+	// background-image url("../img/bg3.jpg")
+	// background-repeat no-repeat
+	// background-position left bottom
+	padding-top 4em
+	padding-bottom 0em
+
+.about-container
+	max-width 1200px
+	padding-top 0.1em
+	margin 0 auto
+	flex-row()
+
+.about-column
+	flex-basis 50%
+	flex-column()
+
+.about-column:first-child
+	padding 0 1em
+
+.logo-bg-wrapper
+	flex-row()
+	flex-center()
+	
+.logo-bg
+	background white
+	flex-grow 1
+	padding 16px
+
+.text-element-bg
+	flex-grow 1
+	flex-row()
+	flex-center()
+	background color4
+	ps-bold(43px, 1, white)
+	text-transform uppercase
+	margin-left 0.25em
+	padding 18px 16px
+	display block
+
+.about-title
+	some-title(white)
+	margin-top 10px
+	font-size 36px
+	text-transform uppercase
+
+.about-text
+	some-text(white)
+	font-size 16px
+	width 430px
+
+.about-img
+	width 100%
+
+@media (max-width: 992px)
+	.about-container
+		flex-direction column
+	
+	.about-column:first-child
+		margin-bottom 3em
+		
+@media (max-width: 576px)
+	.logo-bg .logo__img
+		width 140px
+	.text-element-bg
+		font-size 25px
+	.about-title
+		font-size 24.5px
+	.about-text
+		font-size 1em
+		width 285px
