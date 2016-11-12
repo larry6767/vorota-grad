@@ -1,5 +1,5 @@
 .crew
-	background-color color4
+	background-color #292929
 	padding-top 4em
 	padding-bottom 4em
 
@@ -11,19 +11,45 @@
 
 .crew-column
 	flex-basis 50%
-	flex-column()
-	padding 0 1em
+	padding 0 2em
 
-.crew-img
-	width 100%
-	
 .crew-title
 	some-title(white)
-	width 430px
-	margin-top 10px
+	margin-top 0
+	margin-bottom 1em
 	text-transform uppercase
 
 .crew-text
 	some-text(white)
-	font-size 16px
-	width 430px
+	margin-bottom 2em
+
+.crew-img
+	width 100%
+
+.crew-btn
+	btn(color4, color4)
+	ps-bold(1rem, 1.3, white)
+
+@media (max-width: 992px)
+	.crew-column
+		flex-column()
+		
+	.crew-container
+		flex-direction column
+	
+	.crew-column:first-child
+		margin-bottom 3em
+	
+	.crew-title
+		align-center()
+		
+	.crew-text
+		align-center()
+		
+@media (max-width: 576px)
+	.crew-title
+		margin 0 1em
+		margin-bottom 1em
+	.crew-text
+		margin 0 2.5em
+		margin-bottom 2em
