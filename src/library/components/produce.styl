@@ -1,0 +1,50 @@
+.produce
+	background-color color4
+	padding-top 4em
+	padding-bottom 4em
+
+.produce-container
+	max-width 1200px
+	padding-top 0.1em
+	margin 0 auto
+	flex-row()
+
+.produce__title
+	some-title(white)
+	text-transform uppercase
+	align-center()
+	margin-top 0
+
+.produce__list
+	some-list(white)
+	flex-row()
+	justify-content space-between
+	padding 0
+
+.produce__item
+	text-align center
+
+.produce__img
+	width 150px
+	height 150px
+	border 1em solid #fff
+	margin-bottom 1em
+	background-image url("../img/produce.png")
+
+.produce__text
+	some-text(white)
+	align-center()
+
+.produce__item:first-child
+	margin-left 2em
+
+.produce__item:last-child
+	margin-right 2em
+
+@media screen and (max-width: 992px)
+	.produce__list
+		justify-content center
+	.produce__item
+		margin-left 2em
+		margin-right 2em
+		margin-bottom 2em
