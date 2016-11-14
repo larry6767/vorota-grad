@@ -1,0 +1,44 @@
+.estimate
+	background-color color4
+	padding-top 4em
+	padding-bottom 4em
+
+.estimate-container
+	max-width 1200px
+	padding-top 0.1em
+	margin 0 auto
+	flex-row()
+	
+.estimate__title
+	some-title(white)
+	text-transform uppercase
+	align-center()
+	margin-top 0
+
+.estimate-column
+	width 67%
+	padding-left 2em
+	padding-top 2em
+
+table
+	border 1px solid white
+	border-collapse: collapse
+	thead
+		tr
+			background-color color3
+	tr:nth-child(2n-2)
+		background-color color3
+	td
+		border 3px solid white
+		text-align center
+		ps-bold(1rem, 1.3, white)
+		height 2.5em
+		
+@media screen and (max-width: 992px)
+	.estimate-container .goods-column
+		display none
+	.estimate-column
+		width 100%
+		padding 0 2em
+		padding-top 2em
+		flex-row()
