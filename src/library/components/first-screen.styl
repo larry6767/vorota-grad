@@ -1,14 +1,15 @@
 .first-screen
-	background-image url("../img/bg1.jpg")
+	background-image url("../img/wood-driveway-gate.jpg")
 	background-repeat no-repeat
 	background-size cover
+	background-position bottom
 	position relative
 
-// .first-screen-filter
-// 	width 100%
-// 	height 100%
-// 	position absolute
-// 	background rgba(255, 255, 255, 0.5)
+.first-screen-filter
+	width 100%
+	height 100%
+	position absolute
+	background rgba(96, 72, 72, 0.5)
 
 .first-screen-container
 	max-width 1200px
@@ -18,9 +19,11 @@
 	flex-row()
 
 .features-wrapper
-	background color4
+	position relative
+	background color5
 	padding-top 2em
 	padding-bottom 2em
+	z-index 1
 	
 .features
 	max-width 1200px
@@ -138,7 +141,7 @@
 		margin 1em 1em
 	.features-column
 		flex-basis 12em
-		
+
 // @media (max-width: 576px)
 // 	.features-column
 // 		margin 0 5em
