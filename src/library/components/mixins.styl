@@ -138,6 +138,13 @@ btn(bgcolor, bcolor)
   background-color bgcolor
   border-color bcolor
 
+btn-hover(bgcolor, bcolor, color)
+  &:hover
+    color color
+    background-color bgcolor
+    border-color bcolor
+    transition all 0.2s ease-in-out 0s
+
 // some-text
 some-text(color)
   ps-bold(1rem, 1.3, color)

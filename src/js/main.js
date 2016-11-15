@@ -27,4 +27,27 @@ $(document).ready(function() {
       }]
   });
 
+//yandex map
+  YMaps.jQuery(function () {
+      var map = new YMaps.Map(YMaps.jQuery("#YMapsID")[0]);
+      map.setCenter(new YMaps.GeoPoint(39.702118,47.232759), 15);
+
+      // Создает стиль
+      var s = new YMaps.Style();
+
+      // Создает стиль значка метки
+      s.iconStyle = new YMaps.IconStyle();
+      s.iconStyle.href = "http://mers.roob.in/img/marker.png";
+      s.iconStyle.size = new YMaps.Point(48, 64);
+      s.iconStyle.offset = new YMaps.Point(-20, -65);
+
+      var placemark = new YMaps.Placemark(new YMaps.GeoPoint(39.705918,47.227089), {style: s});
+
+      placemark.name = "Intacto";
+      placemark.description = "г. Ростов-на-Дону, ул. Греческого Города Волос, д. 6, оф. 513";
+
+      map.addOverlay(placemark); 
+
+  });
+
 });
