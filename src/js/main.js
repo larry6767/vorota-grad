@@ -29,25 +29,57 @@ $(document).ready(function() {
 
 //yandex map
   YMaps.jQuery(function () {
-      var map = new YMaps.Map(YMaps.jQuery("#YMapsID")[0]);
-      map.setCenter(new YMaps.GeoPoint(39.702118,47.232759), 15);
+    var map = new YMaps.Map(YMaps.jQuery("#YMapsID")[0]);
+    map.setCenter(new YMaps.GeoPoint(39.702118,47.232759), 15);
 
-      // Создает стиль
-      var s = new YMaps.Style();
+    // create style
+    var s = new YMaps.Style();
 
-      // Создает стиль значка метки
-      s.iconStyle = new YMaps.IconStyle();
-      s.iconStyle.href = "http://mers.roob.in/img/marker.png";
-      s.iconStyle.size = new YMaps.Point(48, 64);
-      s.iconStyle.offset = new YMaps.Point(-20, -65);
+    // create map-marker style
+    s.iconStyle = new YMaps.IconStyle();
+    s.iconStyle.href = "http://mers.roob.in/img/marker.png";
+    s.iconStyle.size = new YMaps.Point(48, 64);
+    s.iconStyle.offset = new YMaps.Point(-20, -65);
 
-      var placemark = new YMaps.Placemark(new YMaps.GeoPoint(39.705918,47.227089), {style: s});
+    var placemark = new YMaps.Placemark(new YMaps.GeoPoint(39.705918,47.227089), {style: s});
 
-      placemark.name = "Intacto";
-      placemark.description = "г. Ростов-на-Дону, ул. Греческого Города Волос, д. 6, оф. 513";
+    placemark.name = "Intacto";
+    placemark.description = "г. Ростов-на-Дону, ул. Греческого Города Волос, д. 6, оф. 513";
 
-      map.addOverlay(placemark); 
+    map.addOverlay(placemark);
 
+  });
+
+  $(".map-mask").click(function (e) {
+    $(".map-mask").remove();
+  });
+
+
+//scroll
+  $(document).ready(function() {
+   
+   
+     $("a.main-navigation__link").click(function() {
+        $("html, body").animate({
+           scrollTop: $($(this).attr("href")).offset().top + "px"
+        }, {
+           duration: 500,
+           easing: "swing"
+        });
+        return false;
+     });
+
+     $(".produce__item a").click(function() {
+        $("html, body").animate({
+           scrollTop: $($(this).attr("href")).offset().top + "px"
+        }, {
+           duration: 500,
+           easing: "swing"
+        });
+        return false;
+     });
+   
+   
   });
 
 });
