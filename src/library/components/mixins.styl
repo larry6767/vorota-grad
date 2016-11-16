@@ -35,13 +35,19 @@ os-bold(font-size, line-height, color)
   color color
 
 ps-bold(font-size, line-height, color)
-  font 700 font-size/line-height "PT Sans", sans-serif
+  // font 700 font-size/line-height "PT Sans", sans-serif
+  font-weight 700
+  line-height line-height
   font-size font-size
+  font-family "PT Sans", sans-serif
   color color
 
 ps-regular(font-size, line-height, color)
-  font 400 font-size/line-height "PT Sans", sans-serif
+  // font 400 font-size/line-height "PT Sans", sans-serif
+  font-weight 400
+  line-height line-height
   font-size font-size
+  font-family "PT Sans", sans-serif
   color color
 
 btn-hexagon(color)
@@ -180,5 +186,6 @@ some-input(color)
 page-title(color)
   ps-bold(2rem, 1.3, color)
   text-transform uppercase
-  margin 2em 4em
+  margin 2em auto
+  width 80%
   text-align center
