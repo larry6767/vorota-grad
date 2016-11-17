@@ -49,6 +49,18 @@ gulp.task('styles', function() {
 
 });
 
+// gulp.task('critical', function() {
+
+// 	return combiner(
+// 		gulp.src('dist/*.html')
+// 		notify("critical! <%= file.relative %>")
+// 		critical({ base: 'dist/', width: 1300, height: 900, inline: false, minify: true })
+// 		rename({ extname: ".html" })
+// 		gulp.dest('src/critical/')
+// 	).on('error', notify.onError());
+	
+// });
+
 gulp.task('js', function() {
 
 	return combiner(

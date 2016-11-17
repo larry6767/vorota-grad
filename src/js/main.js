@@ -82,4 +82,88 @@ $(document).ready(function() {
    
   });
 
+//from submit
+  $('form').submit(function(e) {
+    e.preventDefault();
+    ajaxSubmit($(this));
+  });
+
+  function ajaxSubmit(item) {
+    console.log("ajaxSubmit" + item);
+    var msg = $(item).serialize();
+    $.ajax({
+      type: "POST",
+      url: "mail.php",
+      data: msg,
+      success: function(data) {
+          // $(item + " .step.active.thanks .thanks-msg").html(data);
+          alert(data);
+          $.arcticmodal('close');
+      },
+      error: function(xhr, str) {
+          alert("Возникла ошибка!" + str);
+      }
+    });
+  }
+
+//modal content
+  $(".order").click(function(argument) {
+    var btn = $(this);
+    var item = btn.closest(".item").children(".title").html();
+    var subItem = btn.closest(".goods-filter").children(".goods__column-title").html();
+    var article = btn.attr("data-vendcode");
+    if (article !== undefined) {
+      article = " Арт.: " + article;
+    } else {
+      article = ".";
+    }
+    if (item !== undefined) {
+      item = item + " " + subItem
+    } else if (item == undefined) {
+      item = btn.attr("title");
+      if (item == undefined) {
+        item = btn.html();
+      }
+    }
+    if (btn.hasClass("btn-order")) {
+      item = "Для участия в акции сообщите нам:";
+    }
+    $('.modal-content').arcticmodal({
+      beforeOpen: function(data, el) {
+        el.find(".form-title").text(item);
+        el.find("[name=target]").val(item + article);
+        if (btn.hasClass("btn-order")) {
+          el.find(".submit-button").remove();
+          el.find("textarea").remove();
+          el.find("form").append("<input class=\"submit-button\" type=\"submit\" value=\"Участвовать\">");
+        } else if (btn.hasClass("more")) {
+          el.find(".submit-button").remove();
+          el.find("textarea").remove();
+          el.find("form").append("<input class=\"submit-button\" type=\"submit\" value=\"Узнать подробнее\">");
+        } else if (btn.hasClass("goods__btn")) {
+          el.find(".submit-button").remove();
+          el.find("textarea").remove();
+          el.find("form").append("<input class=\"submit-button\" type=\"submit\" value=\"Узнать цену под ключ\">");
+        } else if (btn.hasClass("mail__btn")) {
+          el.find(".submit-button").remove();
+          el.find("textarea").remove();
+          el.find("form").append("<input class=\"submit-button\" type=\"submit\" value=\"Подписаться\">");
+        } else if (btn.hasClass("manufactory__btn")) {
+          el.find(".submit-button").remove();
+          el.find("textarea").remove();
+          el.find("form").append("<input class=\"submit-button\" type=\"submit\" value=\"Записаться\">");
+        } else if (btn.hasClass("director__btn")) {
+          el.find(".submit-button").remove();
+          el.find("textarea").remove();
+          el.find("form").append("<textarea placeholder=\"Ваш вопрос\">")
+          el.find("form").append("<input class=\"submit-button\" type=\"submit\" value=\"Отправить вопрос\">");
+        } else {
+          el.find(".submit-button").remove();
+          el.find("textarea").remove();
+          el.find("form").append("<input class=\"submit-button\" type=\"submit\" value=\"Заказать\">");
+        }
+      }
+    });
+  });
+
 });

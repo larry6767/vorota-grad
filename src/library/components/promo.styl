@@ -10,15 +10,15 @@
 	flex-row()
 
 .promo-column
-	flex-basis 50%
+	width 50%
 	flex-row()
 
 .promo-subcolumn
-	flex-basis 45%
+	width 45%
 	margin-left 5%
 
 .promo-subcolumn:nth-child(2)
-	flex-basis 25%
+	width 25%
 	margin-left 5%
 
 .promo-column:nth-child(2) .promo-subcolumn
@@ -77,7 +77,7 @@
 		flex-column()
 	
 	.promo-column
-		width 500px
+		width 550px
 	
 	.promo-subcolumn
 		margin-left 0	
@@ -88,26 +88,33 @@
 	.promo-column:nth-child(2) .promo-subcolumn:nth-child(2)
 		margin-right 0
 		margin-left 5%
-
-@media screen and (max-width: 475px)
+@media screen and (max-width: 500px)
 	.promo-column
-		width 260px
+		width 100%
 		flex-column()
-	
-	.promo-subcolumn
-		margin-left 0
-		align-center()
-	
-	.promo-column:nth-child(1) .promo-subcolumn:nth-child(2)
-		margin-left 0
-		margin-bottom 2em
-
-	.promo-column:nth-child(2) .promo-subcolumn:nth-child(2)
-		margin-left 0
-		margin-bottom 2em
 		
 	.promo-subcolumn:nth-child(2)
 		order -1
+
+	.promo-subcolumn
+		margin-left 0
+		align-center()
+		width 80%
+	
+	.promo-column:nth-child(1) .promo-subcolumn:nth-child(2)
+		margin-left auto
+		margin-right auto
+		margin-bottom 2em
+		width 80%
+
+	.promo-column:nth-child(2) .promo-subcolumn:nth-child(2)
+		margin-left auto
+		margin-right auto
+		margin-bottom 2em
+		width 80%
+	
+	.promo-img
+		margin 0 auto
 		
 	.promo-img:after
 		height 169px
