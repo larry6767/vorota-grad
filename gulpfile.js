@@ -17,6 +17,7 @@ const rename = require('gulp-rename');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const pug = require('gulp-pug');
+const critical = require('critical').stream;
 
 
 // const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
@@ -49,17 +50,22 @@ gulp.task('styles', function() {
 
 });
 
-// gulp.task('critical', function() {
+gulp.task('critical', function() {
 
-// 	return combiner(
-// 		gulp.src('dist/*.html')
-// 		notify("critical! <%= file.relative %>")
-// 		critical({ base: 'dist/', width: 1300, height: 900, inline: false, minify: true })
-// 		rename({ extname: ".html" })
-// 		gulp.dest('src/critical/')
-// 	).on('error', notify.onError());
+	return combiner(
+		gulp.src('public/*.html'),
+		notify("critical! <%= file.relative %>"),
+		critical({
+		    inline: true,
+		    css: ['public/css/style.css'],
+		    width: 1300,
+		    height: 900,
+		    minify: true
+		}),
+		gulp.dest('public/')
+	).on('error', notify.onError());
 	
-// });
+});
 
 gulp.task('js', function() {
 
